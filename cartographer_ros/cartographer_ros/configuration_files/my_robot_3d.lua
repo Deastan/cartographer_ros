@@ -22,7 +22,7 @@ options = {
   tracking_frame = "base_imu",
   published_frame = "base_link",
   odom_frame = "odom",
-  provide_odom_frame = false,
+  provide_odom_frame = true,
   publish_frame_projected_to_2d = false,
   use_odometry = false,
   use_nav_sat = false,
@@ -43,7 +43,13 @@ options = {
 }
 
 TRAJECTORY_BUILDER_3D.num_accumulated_range_data = 160
+--160
 
+
+--TRAJECTORY_BUILDER_3D.use_imu_data = true
+TRAJECTORY_BUILDER_3D.use_online_correlative_scan_matching = true
+use_online_correlative_scan_matching = true
+--TRAJECTORY_BUILDER_3D.missing_data_ray_length = 1.
 MAP_BUILDER.use_trajectory_builder_3d = true
 MAP_BUILDER.num_background_threads = 7
 POSE_GRAPH.optimization_problem.huber_scale = 5e2
